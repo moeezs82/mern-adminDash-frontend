@@ -1,4 +1,5 @@
 import {
+  CLEAR_ERRORS,
   DARK_MODE,
   LIGHT_MODE,
   LOAD_USER_FAIL,
@@ -69,6 +70,11 @@ export const userReducer = (state = { user: {} }, action) => {
         ...state,
         loading: false,
         error: action.payload,
+      };
+    case CLEAR_ERRORS:
+      return {
+        ...state,
+        error: null,
       };
 
     default:

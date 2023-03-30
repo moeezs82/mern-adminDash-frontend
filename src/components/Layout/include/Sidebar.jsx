@@ -108,7 +108,7 @@ const Sidebar = ({
   }, [pathname]);
 
   return (
-    <Box component="nav">
+    <Box component="nav" height="100%">
       {isSidebarOpen && (
         <Drawer
           open={isSidebarOpen}
@@ -125,6 +125,7 @@ const Sidebar = ({
               width: drawerWidth,
               position: "relative",
               minHeight: "100vh",
+              height: "100%"
             },
           }}
         >

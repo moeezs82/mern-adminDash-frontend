@@ -1,5 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { modeReducer, userReducer } from "reducers/globalReducer";
+import { productReducer } from "reducers/productReducer";
+import { transactionReducer } from "reducers/transactionReducer";
+import { customerReducer } from "reducers/userReducer";
 import { combineReducers } from "redux";
 import {
   persistStore,
@@ -23,7 +26,10 @@ const persistedReducer = persistReducer(persistConfig, modeReducer);
 
 const reducer = combineReducers({
   mode: persistedReducer,
-  user: userReducer
+  user: userReducer,
+  products: productReducer,
+  customers: customerReducer,
+  transactions: transactionReducer
 });
 
 let initialState = {};
